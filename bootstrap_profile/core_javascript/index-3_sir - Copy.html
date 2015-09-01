@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Home</title>
+
+     <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        
+  </head>
+  <body>
+      <button  onclick="profile_function()">Profile</button> <br>
+      <button  onclick="contact_function()">Contact</button> <br>
+      <button  onclick="portfolio_function()">Portfolio</button> <br>
+    <div id="main">
+       <div id="profile">
+            <h1>This is profile section</h1>
+       </div>
+       
+       <!-- Contact Page Start -->
+       
+        <div id="contact">
+            <h1>This is contact section</h1>
+       </div>
+       
+       <!-- Contact Page End -->
+       
+       <div id="portfolio">
+            <h1>This is portfolio section</h1>            
+       </div>
+    </div>
+    
+    <script>
+        var divMain = document.getElementById("main");
+        var divProfile = document.getElementById("profile");
+        var divContact = document.getElementById("contact");
+        var divPortfolio = document.getElementById("portfolio"); 
+        
+        divMain.removeChild(divProfile);
+        divMain.removeChild(divContact);
+        divMain.removeChild(divPortfolio);
+        divMain.appendChild(divProfile);
+        //console.log(divMain);
+        //divMain.appendChild(divProfile);
+        var presentNode = "profile";
+        var previousNode = "profile";
+        
+        
+        function adjust() {
+    
+            switch(previousNode)
+            {
+                case "profile":
+                    divMain.removeChild(divProfile);
+                    break;
+                case "contact":
+                    divMain.removeChild(divContact);
+                    break;
+                case "portfolio":
+                    divMain.removeChild(divPortfolio);
+                    break;
+                default:
+                    break;
+            }
+            previousNode = presentNode;
+            switch(presentNode)
+            {
+                case "profile":
+                    divMain.appendChild(divProfile);
+                    break;
+                case "contact":
+                    divMain.appendChild(divContact);
+                    break;
+                case "portfolio":
+                    divMain.appendChild(divPortfolio);
+                    break;
+                default:
+                    break;
+            }   
+            
+        }
+        
+        function contact_function(){
+            presentNode = "contact";
+            adjust();
+        }
+         function profile_function(){
+            presentNode = "profile";
+            adjust();
+        }
+         function portfolio_function(){
+            presentNode = "portfolio";
+            adjust();
+        }
+    
+            
+    </script>
+
+  </body>
+</html>

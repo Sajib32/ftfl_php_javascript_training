@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            
+            // input ;
+            function subFunction(start, end){
+                var star, end;
+                var input = "Hello world";
+                var res;
+                var count=0;
+                for(i = start; i < end; i++){
+                    var first, index;
+                    count++;
+                    if(count==1){
+                        first = input.charAt(i);
+                        index = i;
+                    }
+                    else{
+                        first = first + "<br>" + input.charAt(i);
+                        index = index + "<br>" + i;   
+                    }
+                  document.getElementById("items").innerHTML= "Substring is:" + "<br>" + first;
+                    //document.write(input.charAt(i));
+                    document.getElementById("index").innerHTML= "index are:" + "<br>" + index;
+                console.log(i);
+                }
+                
+            }
+        </script>   
+    </head>  
+<body>
+   <div id="items"></div> 
+   <div id="index"></div> 
+   <button onClick="subFunction(4,7)" value="Show">Show Slice</button>
+</body>
+</html>

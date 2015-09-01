@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+        <div id="buttonControl" class="row">
+            <div id="child_1" class="col-md-4 col-sm-3">
+                <nav>
+                   <ul>
+                        <li><a href="#heading" onclick="headingFunction()">Heading</a></li>
+                        <li><a  href="#paragraph" onclick="paragraphFunction()">Paragraph</a></li>
+                   </ul> 
+                </nav>  
+             </div>
+            <div id="child_2" class="col-md-8 col-sm-9">
+                <h1 id="heading">This is heading here</h1>
+                <h1 id="paragraph">This is paragraph here</h1>
+            </div>
+        </div>
+    </div> 
+    <script>
+        var divMain = document.getElementById("buttonControl");
+        var divChild_1 = document.getElementById("child_1");
+        var divChild_2 = document.getElementById("child_2");
+        var divHeading = document.getElementById("heading");
+        var divParagraph = document.getElementById("paragraph");
+        
+        divMain.removeChild(divChild_1);
+        divMain.removeChild(divChild_2);
+        divMain.appendChild(divChild_1);
+        divMain.appendChild(divHeading);
+        
+        var previousNode = "";
+        function headingFunction()
+        {
+            //divMain.replaceChild(divParagraph, divHeading);
+            if(previousNode == "paragraph")
+            {
+                divMain.removeChild(divParagraph);
+            }
+            divMain.appendChild(divHeading);
+        }
+        
+        function paragraphFunction()
+        {
+            divMain.removeChild(divHeading);
+            divMain.appendChild(divParagraph);
+            previousNode = "paragraph";
+        }
+    </script>
+
+  </body>
+</html>

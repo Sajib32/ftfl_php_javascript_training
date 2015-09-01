@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title></title>
+    
+    </head>  
+<body>
+    <body>
+        <div id="main-content">
+          <p>1st paragraph content.....</p>
+          <p>2nd paragraph content.....</p>
+          <p>3rd paragraph content.....</p>
+        </div>
+    </body>
+    <script>
+        //var appender=1;
+        var parentDiv =document.getElementById('main-content');      
+        var node=document.createElement("DIV");
+        var textnode=document.createTextNode("This was added dinamically");
+        node.appendChild(textnode);     
+        //node.id =  appender;
+        var child = parentDiv.children[2];
+        parentDiv.insertBefore(node, child);
+        //appender++;
+    </script>
+</body>
+</html>

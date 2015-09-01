@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            var row = 2;
+            var space = row;
+            
+            for(r = 1; r<=row; r++){
+                for(s = 1; s<space; s++){
+                    document.write(" &nbsp ");
+                }
+                for(c = 1; c<=2*r-1;c++){
+                    document.write("*");
+                }
+                space--;
+                document.write("<br>");
+            }
+        </script>   
+    </head>  
+<body>
+
+</body>
+</html>

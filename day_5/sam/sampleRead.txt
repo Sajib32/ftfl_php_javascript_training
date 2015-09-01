@@ -1,0 +1,2 @@
+Hello world hello php
+I am writing in sample text file

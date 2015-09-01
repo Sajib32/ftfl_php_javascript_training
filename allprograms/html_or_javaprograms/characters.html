@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        function appendItem()
+        {
+            var letter=['a','b','c','d','e','f','g','h','i','j','k','l','m','o','p','q','r','s','t','u','v','x','y','z'];
+            var string=document.getElementById("string").value.trim();
+            string=string.toLowerCase();
+            for(var i=0;i<26;i++){
+                var counter=0;
+                for(var j=0;j<string.length;j++){
+                    if(letter[i]==string.charAt(j)){
+                        counter++
+                    }
+                }
+                //console.log(letter[i],counter);
+                document.write(letter[i]+"=",counter+"<br>");
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div>
+    <input type="text" id="string" placeholder="Enter a string"/></br>
+    <button class="btn btn-success" onClick="appendItem()">Character Frequency</button>
+</div>
+
+</body>
+</html>

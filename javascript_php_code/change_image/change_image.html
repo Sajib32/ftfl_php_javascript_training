@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            var imagePath = ["images/sajib_0.jpg","images/sajib_1.jpg","images/sajib_2.jpg","images/sajib_3.jpg"];
+            var index = 0;
+            function next(){
+                index = index + 1;
+                if(index > 3){
+                    index = 0;
+                }
+                console.log(index, imagePath[index]);
+                var imgTag = document.getElementById("pic");
+                imgTag.src = imagePath[index];
+            }
+            function prev(){
+                index = index-1;
+                if(index < 0){
+					index = 3;
+					
+				}
+				console.log(index, imagePath[index]);
+                var imgTag = document.getElementById("pic");
+                imgTag.src = imagePath[index];
+            }
+            //setInterval(next(), 1000);
+            //function start(){
+             // setInterval(next, 1000);  
+            //}
+        </script>   
+    </head>  
+<body>
+   <img id="pic" src="images/sajib_0.jpg" height="150" weight="150" alt="">
+   <br>
+   <button onclick="prev()">Prev</button>
+   <button onclick="next()">Next</button>
+</body>
+</html>

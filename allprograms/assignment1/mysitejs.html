@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="protfalio.css">
+    <link rel="stylesheet" href="home.css">
+
+</head>
+<body style="background-color:olive;" onload="home()">
+<div class="container" >
+    <div class="row" style="background-color:gray;">
+        <div class="col-md-2 col-sm-3" style="background-color:gray">
+            <button class="btn btn-primary" onclick="home()">Home</button><br>
+            <button class="btn btn-primary" onclick="portfolio()">Portfolio</button><br>
+            <button class="btn btn-primary" onclick="contact()">Contact</button>
+        </div>
+
+        <div class="well col-md-10 col-sm-9" id="main" style="background-color:blue;color:white">
+
+            <div id="home">
+                <h2>Arifur Rahaman</h2><br>
+                <h3>About Myself</h3><br>
+                <p>
+                    Hello! Friends
+                    I am B.Sc. graduate. I am 25 years old. My hobbies are playing volleyball, cooking and watching movies.
+                    I am resident of comilla. We are four in our family father, mother, one brother and I.</br> Thank you
+                </p>
+            </div>
+
+            <div id="portfolio">
+                <div id="project1">
+                    <h2>Online Banking</h2>
+                    <img src="arif.jpg" height="60" width="60" alt="picture"/>
+                    <p>
+                        In this projectm, If any one wants to be member of bank, has to apply for membership by filling certain information through registration form.
+                        After investigation, concerned authority will provide a account number through which member can deposit, widthdraw and transfer money.
+                    </p>
+                </div>
+
+                <div id="project2">
+                    <h2>Shop Management System</h2>
+                    <img src="arif.jpg" height="60" width="60" alt="picture"/>
+                    <p>
+                        In this projectm, If any one wants to be member of bank, has to apply for membership by filling certain information through registration form.
+                        After investigation, concerned authority will provide a account number through which member can deposit, widthdraw and transfer money.
+                    </p>
+                </div>
+
+                <div id="project3">
+                    <h2>Online Banking</h2>
+                    <img src="arif.jpg" height="60" width="60" alt="picture"/>
+                    <p>
+                        In this projectm, If any one wants to be member of bank, has to apply for membership by filling certain information through registration form.
+                        After investigation, concerned authority will provide a account number through which member can deposit, widthdraw and transfer money.
+                    </p>
+                </div>
+
+                <div id="project4">
+                    <h2>Shop Management System</h2>
+                    <img src="arif.jpg" height="60" width="60" alt="picture"/>
+                    <p>
+                        In this projectm, If any one wants to be member of bank, has to apply for membership by filling certain information through registration form.
+                        After investigation, concerned authority will provide a account number through which member can deposit, widthdraw and transfer money.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="contact">
+                <div id="header2">
+                    <h1>Contact to me</h1>
+                </div>
+                <div style="align-content: center;">
+                    <div id="form" style="align:center;">
+                        <form>
+                            <table>
+                                <tr>
+                                    <td>Name :</td>
+                                    <td><input type="text" size="30px"/></td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail :</td>
+                                    <td><input type="text" size="30x"/></td>
+                                </tr>
+                            </table>
+                            Gender : <input type="radio" value="Male" name="gender"/>Male
+                            <input type="radio" value="Female" name="gender" />Female
+                            <label>Message</label></br>
+                                <textarea rows="10" cols="50" style="color: #000000;">
+                                </textarea>
+                            </br>
+                            <input type="submit" style="background-color: blue;color: #ffffff;" value="Send"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        var divMain = document.getElementById("main");
+        var divProfile = document.getElementById("home");
+        var divContact = document.getElementById("contact");
+        var divPortfolio = document.getElementById("portfolio"); 
+        
+        divMain.removeChild(divProfile);
+        divMain.removeChild(divContact);
+        divMain.removeChild(divPortfolio);
+        divMain.appendChild(divProfile);
+        var presentNode = "profile";
+        var previousNode = "profile";
+        
+        
+        function adjust() {
+    
+            switch(previousNode)
+            {
+                case "profile":
+                    divMain.removeChild(divProfile);
+                    break;
+                case "contact":
+                    divMain.removeChild(divContact);
+                    break;
+                case "portfolio":
+                    divMain.removeChild(divPortfolio);
+                    break;
+                default:
+                    break;
+            }
+            previousNode = presentNode;
+            switch(presentNode)
+            {
+                case "profile":
+                    divMain.appendChild(divProfile);
+                    break;
+                case "contact":
+                    divMain.appendChild(divContact);
+                    break;
+                case "portfolio":
+                    divMain.appendChild(divPortfolio);
+                    break;
+                default:
+                    break;
+            }   
+            
+        }
+        
+        function contact(){
+            presentNode = "contact";
+            adjust();
+        }
+         function home(){
+            presentNode = "profile";
+            adjust();
+        }
+         function portfolio(){
+            presentNode = "portfolio";
+            adjust();
+        }
+    
+            
+    </script>
+</body>
+</html>

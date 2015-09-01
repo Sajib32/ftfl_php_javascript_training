@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var images=["arif2.jpg","arif3.jpg","arif4.jpg"];
+        var index=0;
+        function next(){
+            index++;
+            if(index>=2) {
+                index=0;
+
+            }
+            //document.getElementById("image").src="arif2.jpg";
+            document.getElementById("image").src=images[index];
+
+        }
+        function previous(){
+            index--;
+            if(index<0) {
+                index=2;
+
+            }
+            //document.getElementById("image").src="arif2.jpg";
+            document.getElementById("image").src=images[index];
+
+        }
+    </script>
+</head>
+<body>
+<img src="arif.jpg" width="100px" height="100" id="image"/><br>
+<button onClick="next()" >Next</button><br>
+<button onClick="previous()" >Previous</button><br>
+
+</body>
+</html>

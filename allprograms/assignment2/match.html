@@ -1,0 +1,66 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Splicing of string</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <style>
+        #string,#substring
+        {
+            color: #000000;
+        }
+    </style>
+    <script>
+        function show(){
+            var string=document.getElementById("string").value.trim();
+            var substring=document.getElementById("substring").value.trim();
+            var i= 0,k= 0,match=[],found=false;
+            for(i;i<string.length;i++) {
+                var counter = 0;
+                for (var j = 0; j < substring.length; j++) {
+                    if (string.charAt(i++) == substring.charAt(j)) {
+                        counter++;
+                        if (counter == substring.length) {
+                            i = i - substring.length;
+                            //matches=matches+i+',';
+                            //match[0] = i;
+                            //k=k+1;
+                            //found = true;
+
+                           if (i) {
+                                document.getElementById("result").innerHTML = "Substring matches at " + i + " position";
+                                return;
+                            }
+                        }
+                    }
+                }
+
+                i = i - substring.length;
+            }
+            //document.getElementById("result").innerHTML = "Substring matches at "+matches+" position";
+           /*if(found) {
+               document.getElementById("result").innerHTML = "Substring matches at "+match[0]+" position";
+           }
+           else */
+               document.getElementById("result").innerHTML = '"' + substring + '"' + " does not match.";
+
+        }
+    </script>
+</head>
+
+
+<body>
+<div class="container">
+    <div class="row" style="background-color: #269abc">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="background-color: #23527c;color: #ffffff;padding-left: 100px;">
+            <h2>Get matching index</h2>
+            <input type="text" id="string" placeholder="Text"/></br>
+            <input type="text" id="substring" placeholder="substring"/></br>
+            <button class="btn btn-success" onClick="show()" >Get matching index</button><br>
+            <label id="result"></label>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</body>
+</html>

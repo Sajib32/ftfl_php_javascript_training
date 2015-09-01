@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <style>
+        #operand1,#operand2,#operator
+        {
+            color: #000000;
+        }
+    </style>
+    <script type="text/javascript">
+        function calculator()
+        {
+            var number1=document.getElementById("operand1").value.trim();
+            var number2=document.getElementById("operand2").value.trim();
+            var operator=document.getElementById("operator").value.trim();
+
+            var operand1 = Number(number1);
+            var operand2=Number(number2);
+
+           if(number1 && number2 && operator)
+           {
+               if(!isNaN(operand1)) {
+                   if (!isNaN(operand2)) {
+                       if ("+" == operator) {
+                           result = operand1 + operand2;
+                           document.getElementById("result").innerHTML = "Addition of " + operand1 + " and " + operand2 + " is " + result + ".";
+                       }
+
+                       else if ("-" == operator) {
+                           result = operand1 - operand2;
+                           document.getElementById("result").innerHTML = "Subtraction of " + operand1 + " and " + operand2 + " is " + result + ".";
+                       }
+
+                       else if ("*" == operator) {
+                           result = operand1 * operand2;
+                           document.getElementById("result").innerHTML = "Multiplication of " + operand1 + " and " + operand2 + " is " + result + ".";
+                       }
+
+                       else if ("/" == operator) {
+                           if (operand2 > 0) {
+                               result = operand1 / operand2;
+                               document.getElementById("result").innerHTML = "Quotient of " + operand1 + " divides by " + operand2 + " is " + result + ".";
+                           }
+
+                           else
+                               document.getElementById("result").innerHTML = "Third field value should be greater than zero.";
+                       }
+
+                       else if ("%" == operator) {
+                           if (operand2 > 0) {
+                               result = operand1 % operand2;
+                               document.getElementById("result").innerHTML = "Reminder of " + operand1 + " divides by " + operand2 + " is " + result + ".";
+                           }
+
+                           else
+                               document.getElementById("result").innerHTML = "Third field value should be greater than zero.";
+                       }
+
+                       else
+                           document.getElementById("result").innerHTML = '"' + operator + '"' + " is not an operator. Allowed operators are +,-,*,/,%.";
+                   }
+                   else
+                       document.getElementById("result").innerHTML='"'+number2+'"'+" is not a number. Enter valid number.";
+               }
+
+                else
+                    document.getElementById("result").innerHTML='"'+number1+'"'+" is not a number. Enter valid number.";
+           }
+           else
+               document.getElementById("result").innerHTML="Neither field can not be empty.";
+
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="background-color: #269abc">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="background-color: #23527c;color: #ffffff;padding-left: 100px;">
+            <h2>Calculator</h2>
+
+            <input type="text" id="operand1" placeholder="Enter a number"/></br>
+            <input type="text" id="operator" placeholder="Operator(+,-,*,/,%)"/></br>
+            <input type="text" id="operand2" placeholder="Enter Another number"/></br>
+            <label id="result"></label></br><br>
+            <button class="btn btn-success" onClick="calculator()">Calculate</button>
+        </div>
+
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

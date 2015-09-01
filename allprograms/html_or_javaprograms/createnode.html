@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body id="main" onload="change()">
+<div id="div1">
+    <p id="para1">Hello FTFL!!</p>
+    <p id="para2">Hello Comilla!!</p>
+</div>
+<div id="div2">
+    <p id="para3">Arif</p>
+    <p id="para4">Hassib</p>
+</div>
+</body>
+
+<script>
+    //var divTag=document.getElementById("div1");
+    var divTag=document.getElementById("main");
+    var childdiv1=divTag.childNodes[1];
+    var childdiv2=divTag.childNodes[3];
+    //var newPara=document.createElement("p");
+    //var text=document.createTextNode("Hello PHP Group");
+    //newPara.appendChild(text);
+    //var para2=document.getElementById("para2");
+    //var para1=document.getElementById("para1");
+    //divTag.insertChildBefore(newPara,para2);
+    //divTag.appendChild(newPara);
+    //divTag.insertBefore(newPara,para1);
+    //var childPara1=divTag.firstChild;
+    //var child=childPara1.nextSibling;
+    //var childPara1=divTag.childNodes[1];
+    //divTag.removeChild(para1);
+    //divTag.insertBefore(newPara,para2);
+    //divTag.replaceChild(newPara,para2);
+    //divTag.replaceChild(newPara,child);
+    //divTag.replaceChild(childdiv2,childdiv1);
+    function change(){
+        //divTag.replaceChild(childdiv1,childdiv2);
+        divTag.removeChild(childdiv2);
+        divTag.appendChild(childdiv1);
+
+    }
+
+    function again_change(){
+        //divTag.replaceChild(childdiv2,childdiv1);
+        divTag.removeChild(childdiv1);
+        divTag.appendChild(childdiv2);
+
+    }
+</script>
+<button onClick="change()">Replace</button><br>
+<button onClick="again_change()" >Again Replace</button><br>
+</body>
+</html>

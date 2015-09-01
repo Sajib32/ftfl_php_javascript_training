@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Prime Number</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <style>
+        #number
+        {
+            color: #000000;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function prime_number() {
+            var number_string=document.getElementById("number").value.trim();
+             if(number_string){
+                 var number=Number(number_string);
+                 if(!isNaN(number)) {
+                     if (number > 2) {
+                         var counter= 0,prime_number;
+                         for (var i = 2; i < number; i++) {
+                             if (prime(i)) {
+                                 counter++;
+                                 if(counter==1) {
+                                     prime_number = i;
+                                 }
+                                 else
+                                    prime_number=prime_number+"</br>"+i;
+                             }
+                         }
+                         document.getElementById("result").innerHTML = "Total prime numbers below "+number+" is "+counter+".</br>They are as follow:</br>"+prime_number;
+                     }
+                     else
+                         document.getElementById("result").innerHTML = "Number should be greater than 2.";
+                 }
+                 else
+                     document.getElementById("result").innerHTML='"'+number_string+'"'+" is not a number. Enter valid number.";
+             }
+             else
+                 document.getElementById("result").innerHTML="Field is empty. Enter a number.";
+        }
+
+        function prime(number) {
+            var check=true;
+            for(var j=2;j<=Math.floor(Math.sqrt(number));j++) {
+                if(number%j==0) {
+                    check=false;
+                    break;
+                }
+            }
+            return check;
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="background-color: #269abc">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="background-color: #23527c;color: #ffffff;padding-left: 100px;">
+
+            <h3>Find prime numbers.</h3>
+            <input type="text" id="number" placeholder="Enter a number"/></br><br>
+            <button class="btn btn-success" onClick="prime_number()" >Show prime numbers.</button></br>
+            <label id="result"></label></br>
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</body>
+</html>

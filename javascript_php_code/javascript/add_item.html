@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            var first = true;
+            var newItem;
+            function appendItem(){
+                if(first){
+                    newItem = document.getElementById("items").innerHTML;
+                    first = false;
+                }    
+                console.log("inner html is", newItem);
+                document.getElementById("items").innerHTML =        document.getElementById("items").innerHTML + newItem;
+            }    
+        </script>   
+    </head>  
+<body>
+   <div id="items">
+       items <input type="text">
+       quality <input type="text">
+       amount <input type="text">
+       <br>
+   </div> 
+   <button onClick="appendItem()" value="add item">Add Item</button>
+</body>
+</html>

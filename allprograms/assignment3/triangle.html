@@ -1,0 +1,47 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Splicing of string</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <style>
+        #number
+        {
+            color: #000000;
+        }
+    </style>
+    <script>
+        function show() {
+            var number=Number(document.getElementById("number").value);
+            var k=0;
+            for (var i = 1; i <= number; i++) {
+                for (var j = 1; j <= number+k; j++) {
+                    if (j <= number - i) {
+                        document.write("&nbsp&nbsp");
+                    }
+                    else
+                        document.write('*');
+                }
+                k++;
+                document.write('<br>');
+            }
+        }
+
+
+    </script>
+</head>
+
+
+<body>
+<div class="container">
+    <div class="row" style="background-color: #269abc">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="background-color: #23527c;color: #ffffff;padding-left: 100px;">
+            <h2>Triangle</h2>
+            <input type="text" id="number" placeholder="Enter a number"/></br>
+            <button class="btn btn-success" onClick="show()" >Get triangle</button><br>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</body>
+</html>

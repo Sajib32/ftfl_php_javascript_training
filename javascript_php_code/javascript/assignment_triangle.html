@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            var row = 6;
+            //var str = " "; 
+            for(r = 1; r <= row; r++) {
+                for(c = 1; c <= r; c++){ 
+                    document.write( "*" );
+                    //str = str + "*";
+                    //console.log(str);
+                }
+                
+                    document.write( "<br>" );
+            }
+            for (r = 1; r <= row; r++ ){      
+                for(c = 1; c <= row; c++){
+                    if (c > r){
+                        //str = str + "*";
+                        document.write( "*");
+                        console.log("*");
+                    }
+                }
+                 document.write("<br>");
+            }
+
+        </script>   
+    </head>  
+<body>
+
+</body>
+</html>

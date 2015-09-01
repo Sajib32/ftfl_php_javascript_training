@@ -1,0 +1,57 @@
+<script>
+            /*
+            function portfolio(){
+                var parentDiv = document.getElementById("main-container");
+                var row_1Div = document.getElementById("row_1");
+
+                var newDiv = document.createElement("DIV");
+                newDiv.className = "col-md-4 portfolio-item";
+                newDiv.id = "portfolio";
+                
+                var h1Tag = document.createElement("H1");
+                var textNode = document.createTextNode("My Portfolio");
+                h1Tag.appendChild(textNode);
+                newDiv.appendChild(h1Tag);
+                
+                var hrTag = document.createElement("HR");
+                newDiv.appendChild(hrTag);
+                
+                var aTag = document.createElement("A");
+                aTag.setAttribute("href", "#");
+                newDiv.appendChild(aTag);
+                
+                var imgTag = document.createElement("img");
+                var att = document.createAttribute("class");  
+                imgTag.setAttributeNode(att);
+                att.value = "img-responsive";
+                var srcAtt = document.createAttribute("src");  
+                srcAtt.value = "http://placehold.it/700x400";
+                imgTag.setAttributeNode(srcAtt);
+                aTag.appendChild(imgTag);
+                console.log(imgTag);
+                
+                var h3Tag = document.createElement("H3");
+                var h3Atag = document.createElement("A");
+                h3Atag.setAttribute("href", "#");
+                var h3textNode = document.createTextNode("My Project");
+                var pTag = document.createElement("p");
+                var pText = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae."); 
+                h3Tag.appendChild(h3textNode);
+                h3Tag.appendChild(h3Atag);
+                newDiv.appendChild(h3Tag);
+                var hrT = document.createElement("HR");
+                newDiv.appendChild(hrT);
+                newDiv.appendChild(pText);
+                
+                
+                var child = row_1Div.children[1];
+                console.log(child);
+                row_1Div.replaceChild(newDiv,child);
+                //parentDiv.insertBefore(newDiv,child);
+                //row_1Div.insertAfter(newDiv,row_1Div);
+            }
+      
+           */
+
+            
+    </script>

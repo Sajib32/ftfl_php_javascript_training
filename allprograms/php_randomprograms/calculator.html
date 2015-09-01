@@ -1,0 +1,32 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <style>
+        input
+        {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="background-color: #269abc">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="background-color: #23527c;color: #ffffff;padding-left: 100px;">
+            <h2>Calculator</h2>
+            <form action="calculator.php" method="post">
+                <input type="text" name="operand1" placeholder="Enter a number"/></br>
+                <input type="text" name="operator" placeholder="Operator(+,-,*,/,%)"/></br>
+                <input type="text" name="operand2" placeholder="Enter Another number"/></br>
+                <label name="result"></label></br><br>
+                <input type="submit" name="calculator" style="background-color: blue;font-size: larger;" value="Calculate">
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
+</body>
+</html>

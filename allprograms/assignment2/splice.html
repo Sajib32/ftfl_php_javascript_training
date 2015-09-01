@@ -1,0 +1,54 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Splicing of string</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <style>
+        #string,#start_index,#end_index
+        {
+            color: #000000;
+        }
+    </style>
+    <script>
+        function show(){
+            var start_index=Number(document.getElementById("start_index").value);
+            var end_index=Number(document.getElementById("end_index").value);
+            //var substring;
+            //substring=
+            sub_string(start_index, end_index);
+            //document.write(substring);
+        }
+
+        function sub_string(start_index, end_index){
+            var string=document.getElementById("string").value.trim();
+            //var substring=new String(),j=0;
+            var substring=[],j=0;
+            for(i=start_index;i<end_index;i++){
+                substring[j]=string[i];
+                j++;
+                //document.write(string[i]);
+            }
+            document.getElementById("result").innerHTML = "Substring is "+'"'+substring.join("")+'".';
+
+        }
+    </script>
+</head>
+
+
+<body>
+<div class="container">
+    <div class="row" style="background-color: #269abc">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="background-color: #23527c;color: #ffffff;padding-left: 100px;">
+            <h2>Create splicing</h2>
+            <input type="text" id="string" placeholder="Text"/></br>
+            <input type="text" id="start_index" placeholder="Start index"/></br>
+            <input type="text" id="end_index" placeholder="End index"/></br>
+            <button class="btn btn-success" onClick="show()" >Splicing of string</button><br>
+            <label id="result"></label>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</body>
+</html>

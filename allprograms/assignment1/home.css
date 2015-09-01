@@ -1,0 +1,50 @@
+/*#container
+{
+ width:960px;
+ margin:0 auto;
+}*/
+#header {
+    background-color:green;
+    color:red;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    background-color:gray;
+	height:600px;
+    line-height:30px;
+    background-color:olive;
+    /*width:150px;*/S
+    float:left;
+    padding:10px;	      
+}
+#section {
+    background-color:blue;
+	color:white;
+	
+	/*width:80%;
+	height:600px;
+    /*float:left
+    padding:10px;*/	 	 
+}
+#footer {
+    background-color:navy;
+	font-weight:16px;
+    color:white;
+    text-align:center;
+   /*padding:5px;*/	 	 
+}
+a
+{
+ text-decoration:none;
+ font-size:20px;
+ font-weight:bold;
+}
+a:visited
+{
+color:purple;
+}
+a:hover
+{
+color:red;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var images=["arif2.jpg","arif3.jpg","arif4.jpg"];
+        var index=0;
+        function change_image(){
+            //document.getElementById("image").src="arif2.jpg";
+            document.getElementById("image").src=images[index];
+            if((images.length-1)==index){
+                index=-1;
+            }
+            index++;
+
+        }
+
+    </script>
+</head>
+<body>
+<img src="arif.jpg" width="100px" height="100" id="image"/><br>
+<button onClick="change_image()" >Chage image</button><br>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Event Display</title>
+
+    <script>
+        function optionFunction() {
+            var x = document.getElementById("optionSelect").value;
+            document.getElementById("display").innerHTML = "You selected: " + x;
+        }
+        function myFunction1(x) {
+            x.style.background = "red";
+        }
+        function focusOut() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+        function mouseHover() 
+        {
+            var mouseHover = document.getElementById("eventDisplay");
+            //alert("you are now at hello text");
+        }
+        
+        function mouseOut() 
+        {
+            var mouseOut = document.getElementById("eventDisplay");
+            mouseOut.style.color = "green";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="eventDisplay" onmouseover="mouseHover()" onmouseout="mouseOut()">Hello</h1>
+    <br>
+    <form>
+        <input type="text" id="fname" onfocus="myFunction1(this)" onfocusout="focusOut()">
+        <p>Select a option:</p>
+    </form>
+    <select id="optionSelect" onchange="optionFunction()">
+        <option value="mango">Mango
+        <option value="banana">Banana
+    </select>
+
+    <p id="display"></p>
+
+
+</body>
+</html>

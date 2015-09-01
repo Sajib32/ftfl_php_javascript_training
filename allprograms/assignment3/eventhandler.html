@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Event handlers</title>
+
+    <script>
+        function mouseDown() {
+            document.getElementById("myevent").style.color = "red";
+        }
+
+        function mouseUp() {
+            document.getElementById("myevent").style.color = "green";
+        }
+        function myFunction() {
+            alert("You pressed a key inside the input field");
+        }
+        function myfunction() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = "You selected: " + x;
+        }
+        function myFunction1(x) {
+            x.style.background = "yellow";
+        }
+        function myFunction2() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+<h1 id="myevent" onmousedown="mouseDown()" onmouseup="mouseUp()">This is Arifur Rahaman</h1><br>
+<p> on key down</p>
+<form>
+<input type="text" id="fname" onfocus="myFunction1(this)" onkeydown="myFunction()" onfocusout="myFunction2()">
+<p>Select a new car from the list.</p>
+Name: <input type="text" oninvalid="alert('You must fill out the form!');" name="fname" required>
+<input type="submit" value="Submit">
+
+<p>If you click submit, without filling out the text field,
+    an alert message will occur.</p>
+
+<p><strong>Note:</strong> The oninvalid event is not supported in Internet Explorer 9 and earlier or Safari.</p>
+    </form>
+<select id="mySelect" onchange="myfunction()">
+    <option value="Audi">Audi
+    <option value="BMW">BMW
+    <option value="Mercedes">Mercedes
+    <option value="Volvo">Volvo
+</select>
+
+<p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+
+<p id="demo"></p>
+
+
+</body>
+</html>
